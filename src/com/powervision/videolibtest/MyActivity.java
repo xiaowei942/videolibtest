@@ -71,7 +71,7 @@ public class MyActivity extends Activity implements SurfaceHolder.Callback, View
         CodecParam.codecType = Codec.CODEC_TYPE_MEDIACODEC;
         codec = CodecFactory.createCodec(param);
 
-        codec.initCodec(null);
+        //codec.initCodec(null);
     }
 
     @Override
@@ -122,6 +122,7 @@ public class MyActivity extends Activity implements SurfaceHolder.Callback, View
         if (keyCode == KeyEvent.KEYCODE_BACK
                 && event.getRepeatCount() == 0) {
         }
+        codec.stop();
         return super.onKeyDown(keyCode, event);
     }
 }
